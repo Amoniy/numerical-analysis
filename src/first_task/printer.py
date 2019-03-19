@@ -26,9 +26,7 @@ blockSize = 4 / pixels
 
 tickNames = []
 for index in range(0, tickCount + 1):
-    tickNames.append(round((-2
-                            # + (blockSize / 2)
-                            + index * shift), rounding))
+    tickNames.append(round((-2 + index * shift), rounding))
 
 tickIndexes = []
 for index in range(0, tickCount + 1):
@@ -37,8 +35,6 @@ for index in range(0, tickCount + 1):
 plt.xticks(tickIndexes, tickNames)
 plt.yticks(tickIndexes, reversed(tickNames))
 
-# plt.imshow(data)
-# plt.savefig("4k.png")
 plt.imsave(outputFileName, data)
 
 plt.show()
